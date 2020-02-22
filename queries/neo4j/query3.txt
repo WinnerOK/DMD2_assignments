@@ -1,0 +1,5 @@
+match (c:Customer{customer_id:1})<-[:RENTED_TO]-(:Rental)-[:RENTS]->(:Inventory)-[:RENTS_FILM]->
+(f:Film)-[:IN_CATEGORY]->(cat:Category)
+return f.film_id as film_id, f.title as title,
+cat.category_id as category_id, cat.name as category, count(*) as count
+order by count desc

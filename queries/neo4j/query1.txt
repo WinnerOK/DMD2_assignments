@@ -1,0 +1,10 @@
+TODO: fix the query
+
+MATCH (r:Rental)
+WITH r
+ORDER BY r.rental_date DESC LIMIT 1
+RETURN r.rental_date.year
+
+// most recent year
+
+https://github.com/neo4j-examples/neo4j-procedure-template
