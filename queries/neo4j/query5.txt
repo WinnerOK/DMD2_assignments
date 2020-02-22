@@ -1,0 +1,6 @@
+match p=shortestPath(
+	(actor:Actor{actor_id:1}) -[r:FILMED_IN*..50] -(next:Actor)
+)
+where actor<>next
+return next.actor_id as to_id, next.first_name as to_name, next.last_name as to_lastname, size(r)/2 as hops
+order by hops
