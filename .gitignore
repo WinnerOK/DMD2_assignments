@@ -1,3 +1,4 @@
 .idea/
 pgbackup/
 src/.ipynb_checkpoints/
+*.csv

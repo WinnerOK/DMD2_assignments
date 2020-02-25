@@ -2,7 +2,7 @@
 // the rate is based on how many times person rented a film (watched) and
 // how many actors are filmed in `watched` film and a recommendation
 
-match (:Customer{customer_id:12}) <- [:RENTED_TO] - (:Rental) - [:RENTS] -> (:Inventory) - [views:USED_IN] -> (watched:Film)
+match (:Customer{customer_id:12}) <- [:RENTED_TO] - (:Rental) - [:RENTS] -> (:Inventory) - [views:RENTS_FILM] -> (watched:Film)
 <-[:FILMED_IN] - (a:Actor)- [conn:FILMED_IN] -> (rec:Film), (watched) - [:IN_CATEGORY] -> (cat:Category) <- [:IN_CATEGORY] - (rec)
 where rec <> watched
 return rec.film_id as recommendation_film_id, rec.title as recommendation_film_title, cat.name as category,
