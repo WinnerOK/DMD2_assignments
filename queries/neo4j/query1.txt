@@ -8,6 +8,6 @@ match (cat2:Category)<-[:IN_CATEGORY]-(f2:Film)<-[:RENTS_FILM]-(:Inventory)<-[:R
 
 where cat2 <> cat1 and f1 <> f2 and
 datetime({epochmillis:r1.rental_date}).year = most_recent_year and datetime({epochmillis:r2.rental_date}).year = most_recent_year
-return DISTINCT customer.customer_id
+return DISTINCT customer.customer_id as customer_id, customer.first_name as first_name, customer.last_name as last_name
 
 # match all customers, who have seen 2 different genres via 2 different films
