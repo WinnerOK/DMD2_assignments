@@ -2,3 +2,6 @@
 pgbackup/
 src/.ipynb_checkpoints/
 *.csv
+.python-version
+.vscode/
+queries/neo4j/Query2.xlsx
