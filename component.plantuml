@@ -1,0 +1,42 @@
+@startuml
+
+package "translate script"{
+    [transfer_table] --> Neo4j_statements
+    [transfer_many2many] --> Neo4j_statements
+    [transfer_relation] --> Neo4j_statements
+    Neo4j_statements -d-> [execute_statements]
+    [set_unique_constraint]
+}
+
+database "PostgreSQL" {
+    folder "tables" {
+        [film]
+        [actor]
+        [...]
+    }
+
+    folder "many2many relation tables" {
+        [film_actor]
+        [film_category]
+    }
+}
+
+database "Neo4j"{
+    [nodes]
+    [edges]
+}
+
+[set_unique_constraint] -u-> [transfer_table]
+
+[film_category] -d-> [transfer_many2many]
+[film_actor] -d-> [transfer_many2many]
+
+[film] -d-> [transfer_table]
+[actor] -d-> [transfer_table]
+
+[film] -d-> [transfer_relation]
+
+[execute_statements] -d-> [nodes]
+[execute_statements] -d-> [edges]
+
+@enduml

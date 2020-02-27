@@ -1,4 +1,0 @@
-match (a1:Actor) - [:FILMED_IN] -> (f:Film) <- [:FILMED_IN] - (a2:Actor)
-where a1.actor_id < a2.actor_id
-return a1.actor_id as actor1_id, a2.actor_id as actor2_id, count(*) as count
-order by actor1_id, actor2_id

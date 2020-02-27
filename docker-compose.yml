@@ -9,7 +9,6 @@ services:
     volumes:
       - ./pgbackup:/backup
       - export:/tmp
-#      - ${HOME}/neo4j/import:/export
       - db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: DMD2user
@@ -31,12 +30,10 @@ services:
       - "7473:7473"
       - "7687:7687"
     volumes:
-      - ${HOME}/neo4j/data:/var/lib/neo4j/data
-      - ${HOME}/neo4j/logs:/var/lib/neo4j/logs
+      - ./neo4j/data:/var/lib/neo4j/data
+      - ./neo4j/logs:/var/lib/neo4j/logs
       - export:/var/lib/neo4j/import
-#      - ${HOME}/neo4j/import:/var/lib/neo4j/import
-      - ${HOME}/neo4j/plugins:/var/lib/neo4j/plugins
-      - ${HOME}/neo4j/backup:/var/lib/neo4j/backup
+      - ./neo4j/plugins:/var/lib/neo4j/plugins
     environment:
       - NEO4J_AUTH=neo4j/bitnami
 volumes:
