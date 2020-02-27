@@ -52,6 +52,10 @@ with driver.session() as session:
                 cell.value = 0
 
     wb.save("Query2.xlsx")
-    print('See the result of query2 in the file "Query2.xlsx"')
-print(f"Total time elapsed: {time() - start} sec\nQuery was executed in {query_executed}sec")
+    print('See the result of query2 in the file "Query2.xlsx"\n'
+          'Please format cells to fit data or see formatted example "Query2_formatted.xlsx" ')
+
+# Total time elapsed: 3.2713279724121094 sec
+# Query was executed in 0.6801943778991699sec
+print(f"\nTotal time elapsed: {time() - start} sec\nQuery was executed in {query_executed}sec")
 driver.close()

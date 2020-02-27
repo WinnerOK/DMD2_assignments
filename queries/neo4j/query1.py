@@ -27,5 +27,6 @@ with driver.session() as session:
     print("Query1:\nPeople, who rented movies of at least two different categories during the most recent year\n\t",
           "\n\t".join(q1), sep="")
 
+# Elapsed: 0.20471739768981934 sec
 print(f"Elapsed: {time()-start} sec")
 driver.close()

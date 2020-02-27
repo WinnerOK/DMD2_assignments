@@ -41,5 +41,7 @@ def get_customer_recommendations(customer_id: int, limit: Optional[int] = None):
 print("Query4:")
 data = get_customer_recommendations(12, limit=5)
 print("Recommendations:\n", tabulate.tabulate(data, ["film_id", "title", "category", "recommendation_rate"]))
+
+# Elapsed 0.12119197845458984 sec
 print(f"Elapsed {time() - start} sec")
 driver.close()

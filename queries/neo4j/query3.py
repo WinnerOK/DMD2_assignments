@@ -29,5 +29,7 @@ def get_customer_history(customer_id: int):
 data = get_customer_history(12)
 print("Query3:")
 print(tabulate.tabulate(data, ["film_id", "title", "category_id", "category", "rental_count"]))
+
+# Elapsed: 0.09195184707641602 sec
 print(f"Elapsed: {time() - start} sec")
 driver.close()

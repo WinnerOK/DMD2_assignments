@@ -29,5 +29,7 @@ def get_separation_degrees(actor_id: int):
 
 print("Query5:")
 print(tabulate.tabulate(get_separation_degrees(12), ["to (id)", "name", "degree"]))
+
+# Elapsed: 0.1719803810119629
 print(f"Elapsed: {time() - start}")
 driver.close()
