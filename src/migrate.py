@@ -51,7 +51,7 @@ def set_unique_constraint(table: str) -> str:
     return f"CREATE CONSTRAINT ON ({table}:{table.capitalize()}) ASSERT {table}.{table}_id IS UNIQUE"
 
 
-def transfer_table(table_name: str, with_index=True) -> Tuple[str, str]:
+def transfer_table(table_name: str) -> Tuple[str, str]:
     export = f"copy {table_name} to '/tmp/{table_name}.csv' DELIMITER ',' CSV HEADER;"
     cursor.execute(export)
     import_statement = "USING PERIODIC COMMIT\n" \

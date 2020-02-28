@@ -9,6 +9,8 @@ NEO_PASSWORD = "bitnami"
 uri = "bolt://localhost:7687"
 driver = GraphDatabase.driver(uri, auth=(NEO_LOGIN, NEO_PASSWORD))
 
+# Find the shortest path between given actor and each other within 25 films.
+# (The restriction of 25 hops should be more than enough for the real world db)
 start = time()
 
 

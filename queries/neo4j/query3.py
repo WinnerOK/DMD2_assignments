@@ -10,6 +10,7 @@ NEO_PASSWORD = "bitnami"
 uri = "bolt://localhost:7687"
 driver = GraphDatabase.driver(uri, auth=(NEO_LOGIN, NEO_PASSWORD))
 
+# find chains between customer and film, count of chains represent number of times film has been rented
 start = time()
 
 

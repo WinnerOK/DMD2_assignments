@@ -1,6 +1,6 @@
 @startuml
 
-package "translate script"{
+package "migrate.py"{
     [transfer_table] --> Neo4j_statements
     [transfer_many2many] --> Neo4j_statements
     [transfer_relation] --> Neo4j_statements

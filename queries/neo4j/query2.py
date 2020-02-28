@@ -11,6 +11,7 @@ NEO_PASSWORD = "bitnami"
 uri = "bolt://localhost:7687"
 driver = GraphDatabase.driver(uri, auth=(NEO_LOGIN, NEO_PASSWORD))
 
+# Find 2 different actors interconnected by one film, return names and count of such films for each pair
 start = time()
 with driver.session() as session:
     data = session.run(
