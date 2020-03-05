@@ -12,8 +12,9 @@ NEO_PASSWORD = "bitnami"
 uri = "bolt://localhost:7687"
 driver = GraphDatabase.driver(uri, auth=(NEO_LOGIN, NEO_PASSWORD))
 
-# A recommendation rate for film R is how many times customer C rented a film F + how many actors of F were filmed in R,
-# where R and F are in the same category
+# A recommendation rate for film R is how many times customer C rented a films F1,F2, ... +
+# how many actors of F1, F2, ... were filmed in R,
+# where R and F1, F2, ... are in the same category
 start = time()
 
 
